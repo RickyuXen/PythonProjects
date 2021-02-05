@@ -1,2 +1,2 @@
-Total Messages: 34 Total Boops: 20
-{'RickyuXen#3176': 20}
+Total Messages: 0 Total Boops: 0
+{}

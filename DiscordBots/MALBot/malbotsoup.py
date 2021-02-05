@@ -50,4 +50,4 @@ for num in range(1, len(topair)+1):
 # async def test(ctx):
 
 #change key
-client.run('Nzk1MTQ1MDUwMTY2MDAxNzE0.X_FGiQ.zyxESnhTRH4rMd2k7XV2aAiW7u4')
+client.run()

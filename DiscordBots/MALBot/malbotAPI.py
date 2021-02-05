@@ -33,4 +33,7 @@ async def top(ctx, *arg):
         print(e)
         await ctx.channel.send(f'Something went wrong;\nanime: airing, upcoming, movie\nmanga: manga, novels, manhwa, manhua\nBoth: bypopulariy, favorite\nsyntax: \".top type typeof amount\"')
 
-client.run('Nzk1MTQ1MDUwMTY2MDAxNzE0.X_FGiQ.zyxESnhTRH4rMd2k7XV2aAiW7u4')
+# token
+token = open("malToken.txt", "r")
+
+client.run(token.read())

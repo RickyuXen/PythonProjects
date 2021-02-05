@@ -71,4 +71,7 @@ async def on_message(message):
 # Have update_status update in the background
 client.loop.create_task(update_status())
 
-client.run('NzkzNjk5NzQzMTExOTcwODM3.X-wEfA.mLHZq8ZvLONI0SvweeBtWZ_ceyk')
+# token
+f = open("BoopToken.txt", "r")
+
+client.run(f.read())

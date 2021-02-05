@@ -137,4 +137,7 @@ async def delete(ctx, arg):
 # Have update_status update in the background
 client.loop.create_task(update_status())
 
-client.run('NzkwNDIyNTU4NjMzMjMwMzc3.X-AYXw.SkFnBThN_4dHXJWSxoNqSYEMWJQ')
+# token
+token = open("firstToken.txt", "r")
+
+client.run(token.read())
