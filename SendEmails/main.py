@@ -45,7 +45,7 @@ email_sender = os.getenv("EMAIL")
 email_password = os.getenv("APP_PASSWORD")
 
 # list of email recipients 
-email_receiver = ["rickymach7@gmail.com", "rickymach10@gmail.com"]
+email_receiver = []
 
 def main():
     for receiver in email_receiver: # send to each recipient
