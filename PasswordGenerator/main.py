@@ -32,10 +32,12 @@ def generatePassword():
     else:
         labelP["text"]= "Please pick at least one of the checkboxes"
 
+    # Add in passwordstorage.txt in future and store passwords in the text file
+
 # create GUI
 root = tk.Tk()
 
-photo = tk.PhotoImage(file = "lock.png")
+photo = tk.PhotoImage(file = "C:\Important Files\PythonProjects\PasswordGenerator\lock.png")    # requires entire file path
 root.iconphoto(False, photo)
 
 root.geometry("500x250")
