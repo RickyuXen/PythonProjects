@@ -67,11 +67,14 @@ def createAccount(new_window, textName, textPassword, textRePassword):
                 if (passwordR == rePasswordR):
                     print("password and repassword are the same; account created")
                     createAccountSuccessful(nameR, passwordR)
-                    closeWindow(new_window, root)
+                    createSmallWindow(new_window, "Successfully registered account!")
+                    # closeWindow(new_window, root)
                 else:
                     print("not the same passwords")
+                    createSmallWindow(new_window, "Passwords do not match")
             else:
                 print("Username already exists in db")
+                createSmallWindow(new_window, "Username already exists")
         except:
             print("There was an issue")
 
@@ -121,7 +124,7 @@ def registerAccount():
     # when user presses (X) on application, to properly close out the root page
     new_window.protocol("WM_DELETE_WINDOW", on_closing)
     
-def loginButton():
+def loginButton(new_window):
 
     # get input values
     name = textName.get("1.0", "end-1c")
@@ -129,6 +132,7 @@ def loginButton():
 
     # if name / password in sql and match, login successful
     # check that username does exist within the database; if it does, do not proceed
+    # Check size if < 4 throw exception
     
     mycursor.execute(f"SELECT username, passwd FROM useraccounts.registeredaccounts WHERE username = \"{name}\"")
     results = mycursor.fetchall()
@@ -138,12 +142,17 @@ def loginButton():
         if(name == results[0][0]):
             if(password == results[0][1]):
                 print("Login successful")
+                # open up page that login was successful -> 
+                createSmallWindow(new_window, "Successfully Logged In!")
             else:
                 print("Credentials incorrect")
+                createSmallWindow(new_window, "Credentials incorrect")
         else:
             print("Credentials incorrect")
+            createSmallWindow(new_window, "Credentials incorrect")
     except:
         print("Results not found; empty query")
+        createSmallWindow(new_window, "Credentials incorrect")
 
     print(name + ' ' + password)
 
@@ -172,7 +181,7 @@ if __name__ == "__main__":
     # buttons to register/login
     buttonReg = tk.Button(root, text="Register Account", command=registerAccount)
     buttonReg.pack(pady=2)
-    buttonLog = tk.Button(root, text="Login", command=loginButton)
+    buttonLog = tk.Button(root, text="Login", command=lambda: loginButton(root))
     buttonLog.pack(pady=1)
 
     root.mainloop()
